@@ -1,0 +1,412 @@
+62,109d61
+< //Custom Kernel code by Shubham Vadhera - start
+< static int vmextcntr_exception_nmi = 0;
+< static int vmextcntr_external_interrupt = 0;
+< static int vmextcntr_triple_fault = 0;
+< static int vmextcntr_nmi_window = 0;
+< static int vmextcntr_io_instruction = 0;
+< static int vmextcntr_cr_access = 0;
+< static int vmextcntr_dr_access = 0;
+< static int vmextcntr_cpuid = 0;
+< static int vmextcntr_msr_read = 0;
+< static int vmextcntr_msr_write = 0;
+< static int vmextcntr_pending_interrupt = 0;
+< static int vmextcntr_hlt = 0;
+< static int vmextcntr_invd = 0;
+< static int vmextcntr_invlpg = 0;
+< static int vmextcntr_rdpmc = 0;
+< static int vmextcntr_vmcall = 0;
+< static int vmextcntr_vmclear = 0;
+< static int vmextcntr_vmlaunch = 0;
+< static int vmextcntr_vmptrld = 0;
+< static int vmextcntr_vmptrst = 0;
+< static int vmextcntr_vmread = 0;
+< static int vmextcntr_vmresume = 0;
+< static int vmextcntr_vmwrite = 0;
+< static int vmextcntr_vmoff = 0;
+< static int vmextcntr_vmon = 0;
+< static int vmextcntr_tpr_below_threshold = 0;
+< static int vmextcntr_apic_access = 0;
+< static int vmextcntr_apic_write = 0;
+< static int vmextcntr_eoi_induced = 0;
+< static int vmextcntr_wbinvd = 0;
+< static int vmextcntr_xsetbv = 0;
+< static int vmextcntr_task_switch = 0;
+< static int vmextcntr_mce_during_vmentry = 0;
+< static int vmextcntr_ept_violation = 0;
+< static int vmextcntr_ept_misconfig = 0;
+< static int vmextcntr_pause_instruction = 0;
+< static int vmextcntr_mwait_instruction = 0;
+< static int vmextcntr_monitor_trap_flag = 0;
+< static int vmextcntr_monitor_instruction = 0;
+< static int vmextcntr_invept = 0;
+< static int vmextcntr_invvpid = 0;
+< static int vmextcntr_xsaves = 0;
+< static int vmextcntr_xrstors = 0;
+< static int vmextcntr_pml_full = 0;
+< static int vmextcntr_pcommit = 0;
+< //Custom Kernel code by Shubham Vadhera - end
+< 
+5332,5337d5283
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_mce_during_vmentry++;
+< 	//printk("\nVMEXTCNT_MCE_DURING_VMENTRY:");
+< 	//printk("%d",vmextcntr_mce_during_vmentry);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5344,5349d5289
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_exception_nmi++;
+< 	//printk("\nVMEXTCNT_EXCEPTION_NMI:");
+< 	//printk("%d",vmextcntr_exception_nmi);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5461,5466d5400
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_external_interrupt++;
+< 	//printk("\nVMEXTCNT_EXTERNAL_INTERRUPT:");
+< 	//printk("%d",vmextcntr_external_interrupt);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5473,5478d5406
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_triple_fault++;
+< 	//printk("\nVMEXTCNT_TRIPLE_FAULT:");
+< 	//printk("%d",vmextcntr_triple_fault);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5485,5490d5412
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_io_instruction++;
+< 	//printk("\nVMEXTCNT_IO_INSTRUCTION:");
+< 	//printk("%d",vmextcntr_io_instruction);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5602,5607d5523
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_cr_access++;
+< 	//printk("\nVMEXTCNT_CR_ACCESS:");
+< 	//printk("%d",vmextcntr_cr_access);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5687,5692d5602
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_dr_access++;
+< 	//printk("\nVMEXTCNT_DR_ACCESS:");
+< 	//printk("%d",vmextcntr_dr_access);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5793,5798d5702
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_cpuid++;
+< 	//printk("\nVMEXTCNT_CPUID:");
+< 	//printk("%d",vmextcntr_cpuid);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5805,5810d5708
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_msr_read++;
+< 	//printk("\nVMEXTCNT_MSR_READ:");
+< 	//printk("%d",vmextcntr_msr_read);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5833,5838d5730
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_msr_write++;
+< 	//printk("\nVMEXTCNT_MSR_WRITE:");
+< 	//printk("%d",vmextcntr_msr_write);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5860,5865d5751
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_tpr_below_threshold++;
+< 	//printk("\nVMEXTCNT_TPR_BELOW_THRESHOLD:");
+< 	//printk("%d",vmextcntr_tpr_below_threshold);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5872,5877d5757
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_pending_interrupt++;
+< 	//printk("\nVMEXTCNT_PENDING_INTERRUPT:");
+< 	//printk("%d",vmextcntr_pending_interrupt);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5893,5898d5772
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_hlt++;
+< 	//printk("\nVMEXTCNT_HLT:");
+< 	//printk("%d",vmextcntr_hlt);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5904,5909d5777
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_vmcall++;
+< 	//printk("\nVMEXTCNT_VMCALL:");
+< 	//printk("%d",vmextcntr_vmcall);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5916,5921d5783
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_invd++;
+< 	//printk("\nVMEXTCNT_INVD:");
+< 	//printk("%d",vmextcntr_invd);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5927,5932d5788
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_invlpg++;
+< 	//printk("\nVMEXTCNT_INVLPG:");
+< 	//printk("%d",vmextcntr_invlpg);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5942,5947d5797
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_rdpmc++;
+< 	//printk("\nVMEXTCNT_RDPMC:");
+< 	//printk("%d",vmextcntr_rdpmc);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5958,5963d5807
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_wbinvd++;
+< 	//printk("\nVMEXTCNT_WBINVD:");
+< 	//printk("%d",vmextcntr_wbinvd);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5970,5975d5813
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_xsetbv++;
+< 	//printk("\nVMEXTCNT_XSETBV:");
+< 	//printk("%d",vmextcntr_xsetbv);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5986,5991d5823
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_xsaves++;
+< 	//printk("\nVMEXTCNT_XSAVES:");
+< 	//printk("%d",vmextcntr_xsaves);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+5999,6004d5830
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_xrstors++;
+< 	//printk("\nVMEXTCNT_XRSTORS:");
+< 	//printk("%d",vmextcntr_xrstors);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+6012,6017d5837
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_apic_access++;
+< 	//printk("\nVMEXTCNT_APIC_ACCESS:");
+< 	//printk("%d",vmextcntr_apic_access);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+6041,6046d5860
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_eoi_induced++;
+< 	//printk("\nVMEXTCNT_EOI_INDUCED:");
+< 	//printk("%d",vmextcntr_eoi_induced);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+6057,6062d5870
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_apic_write++;
+< 	//printk("\nVMEXTCNT_APIC_WRITE:");
+< 	//printk("%d",vmextcntr_apic_write);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+6073,6078d5880
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_task_switch++;
+< 	//printk("\nVMEXTCNT_TASK_SWITCH:");
+< 	//printk("%d",vmextcntr_task_switch);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+6144,6149d5945
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_ept_violation++;
+< 	//printk("\nVMEXTCNT_EPT_VIOLATION:");
+< 	//printk("%d",vmextcntr_ept_violation);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+6198,6203d5993
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_ept_misconfig++;
+< 	//printk("\nVMEXTCNT_EPT_MISCONFIG:");
+< 	//printk("%d",vmextcntr_ept_misconfig);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+6236,6241d6025
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_nmi_window++;
+< 	//printk("\nVMEXTCNT_NMI_WINDOW:");
+< 	//printk("%d",vmextcntr_nmi_window);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+6625,6630d6408
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_pause_instruction++;
+< 	//printk("\nVMEXTCNT_PAUSE_INSTRUCTION:");
+< 	//printk("%d",vmextcntr_pause_instruction);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+6648,6653d6425
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_mwait_instruction++;
+< 	//printk("\nVMEXTCNT_MWAIT_INSTRUCTION:");
+< 	//printk("%d",vmextcntr_mwait_instruction);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+6660,6665d6431
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_monitor_trap_flag++;
+< 	//printk("\nVMEXTCNT_MONITOR_TRAP_FLAG:");
+< 	//printk("%d",vmextcntr_monitor_trap_flag);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+6671,6676d6436
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_monitor_instruction++;
+< 	//printk("\nVMEXTCNT_MONITOR_INSTRUCTION:");
+< 	//printk("%d",vmextcntr_monitor_instruction);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7032,7037d6791
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_vmon++;
+< 	//printk("\nVMEXTCNT_VMON:");
+< 	//printk("%d",vmextcntr_vmon);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7198,7203d6951
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_vmoff++;
+< 	//printk("\nVMEXTCNT_VMOFF:");
+< 	//printk("%d",vmextcntr_vmoff);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7215,7220d6962
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_vmclear++;
+< 	//printk("\nVMEXTCNT_VMCLEAR:");
+< 	//printk("%d",vmextcntr_vmclear);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7264,7269d7005
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_vmlaunch++;
+< 	//printk("\nVMEXTCNT_VMLAUNCH:");
+< 	//printk("%d",vmextcntr_vmlaunch);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7276,7280d7011
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_vmresume++;
+< 	//printk("\nVMEXTCNT_VMRESUME:");
+< 	//printk("%d",vmextcntr_vmresume);
+< 	//Custom Kernel code by Shubham Vadhera - end
+7473,7478d7203
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_vmread++;
+< 	//printk("\nVMEXTCNT_VMREAD:");
+< 	//printk("%d",vmextcntr_vmread);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7522,7527d7246
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_vmwrite++;
+< 	//printk("\nVMEXTCNT_VMWRITE:");
+< 	//printk("%d",vmextcntr_vmwrite);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7582,7587d7300
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_vmptrld++;
+< 	//printk("\nVMEXTCNT_VMPTRLD:");
+< 	//printk("%d",vmextcntr_vmptrld);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7637,7642d7349
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_vmptrst++;
+< 	//printk("\nVMEXTCNT_VMPTRST:");
+< 	//printk("%d",vmextcntr_vmptrst);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7669,7674d7375
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_invept++;
+< 	//printk("\nVMEXTCNT_INVEPT:");
+< 	//printk("%d",vmextcntr_invept);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7741,7746d7441
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_invvpid++;
+< 	//printk("\nVMEXTCNT_INVVPID:");
+< 	//printk("%d",vmextcntr_invvpid);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7810,7815d7504
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_pml_full++;
+< 	//printk("\nVMEXTCNT_PML_FULL:");
+< 	//printk("%d",vmextcntr_pml_full);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+7841,7846d7529
+< 	//Custom Kernel code by Shubham Vadhera - start
+< 	vmextcntr_pcommit++;
+< 	//printk("\nVMEXTCNT_PCOMMIT:");
+< 	//printk("%d",vmextcntr_pcommit);
+< 	//Custom Kernel code by Shubham Vadhera - end
+< 
+11297,11344d10979
+< 
+< //Custom Kernel code by Shubham Vadhera - start
+< EXPORT_SYMBOL(vmextcntr_exception_nmi);
+< EXPORT_SYMBOL(vmextcntr_external_interrupt);
+< EXPORT_SYMBOL(vmextcntr_triple_fault);
+< EXPORT_SYMBOL(vmextcntr_nmi_window);
+< EXPORT_SYMBOL(vmextcntr_io_instruction);
+< EXPORT_SYMBOL(vmextcntr_cr_access);
+< EXPORT_SYMBOL(vmextcntr_dr_access);
+< EXPORT_SYMBOL(vmextcntr_cpuid);
+< EXPORT_SYMBOL(vmextcntr_msr_read);
+< EXPORT_SYMBOL(vmextcntr_msr_write);
+< EXPORT_SYMBOL(vmextcntr_pending_interrupt);
+< EXPORT_SYMBOL(vmextcntr_hlt);
+< EXPORT_SYMBOL(vmextcntr_invd);
+< EXPORT_SYMBOL(vmextcntr_invlpg);
+< EXPORT_SYMBOL(vmextcntr_rdpmc);
+< EXPORT_SYMBOL(vmextcntr_vmcall);
+< EXPORT_SYMBOL(vmextcntr_vmclear);
+< EXPORT_SYMBOL(vmextcntr_vmlaunch);
+< EXPORT_SYMBOL(vmextcntr_vmptrld);
+< EXPORT_SYMBOL(vmextcntr_vmptrst);
+< EXPORT_SYMBOL(vmextcntr_vmread);
+< EXPORT_SYMBOL(vmextcntr_vmresume);
+< EXPORT_SYMBOL(vmextcntr_vmwrite);
+< EXPORT_SYMBOL(vmextcntr_vmoff);
+< EXPORT_SYMBOL(vmextcntr_vmon);
+< EXPORT_SYMBOL(vmextcntr_tpr_below_threshold);
+< EXPORT_SYMBOL(vmextcntr_apic_access);
+< EXPORT_SYMBOL(vmextcntr_apic_write);
+< EXPORT_SYMBOL(vmextcntr_eoi_induced);
+< EXPORT_SYMBOL(vmextcntr_wbinvd);
+< EXPORT_SYMBOL(vmextcntr_xsetbv);
+< EXPORT_SYMBOL(vmextcntr_task_switch);
+< EXPORT_SYMBOL(vmextcntr_mce_during_vmentry);
+< EXPORT_SYMBOL(vmextcntr_ept_violation);
+< EXPORT_SYMBOL(vmextcntr_ept_misconfig);
+< EXPORT_SYMBOL(vmextcntr_pause_instruction);
+< EXPORT_SYMBOL(vmextcntr_mwait_instruction);
+< EXPORT_SYMBOL(vmextcntr_monitor_trap_flag);
+< EXPORT_SYMBOL(vmextcntr_monitor_instruction);
+< EXPORT_SYMBOL(vmextcntr_invept);
+< EXPORT_SYMBOL(vmextcntr_invvpid);
+< EXPORT_SYMBOL(vmextcntr_xsaves);
+< EXPORT_SYMBOL(vmextcntr_xrstors);
+< EXPORT_SYMBOL(vmextcntr_pml_full);
+< EXPORT_SYMBOL(vmextcntr_pcommit);
+< //Custom Kernel code by Shubham Vadhera - end

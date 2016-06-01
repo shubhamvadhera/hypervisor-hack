@@ -1,0 +1,41 @@
+Common subdirectories: linux-4.5.2/arch and original/linux-4.5.2/arch
+Common subdirectories: linux-4.5.2/block and original/linux-4.5.2/block
+Common subdirectories: linux-4.5.2/certs and original/linux-4.5.2/certs
+Only in linux-4.5.2: .config
+Only in linux-4.5.2: .config.old
+Common subdirectories: linux-4.5.2/crypto and original/linux-4.5.2/crypto
+Only in linux-4.5.2: debian
+Common subdirectories: linux-4.5.2/Documentation and original/linux-4.5.2/Documentation
+Common subdirectories: linux-4.5.2/drivers and original/linux-4.5.2/drivers
+Common subdirectories: linux-4.5.2/firmware and original/linux-4.5.2/firmware
+Common subdirectories: linux-4.5.2/fs and original/linux-4.5.2/fs
+Common subdirectories: linux-4.5.2/include and original/linux-4.5.2/include
+Common subdirectories: linux-4.5.2/init and original/linux-4.5.2/init
+Common subdirectories: linux-4.5.2/ipc and original/linux-4.5.2/ipc
+Common subdirectories: linux-4.5.2/kernel and original/linux-4.5.2/kernel
+Common subdirectories: linux-4.5.2/lib and original/linux-4.5.2/lib
+Only in linux-4.5.2: .missing-syscalls.d
+Common subdirectories: linux-4.5.2/mm and original/linux-4.5.2/mm
+Only in linux-4.5.2: modules.builtin
+Only in linux-4.5.2: modules.order
+Only in linux-4.5.2: Module.symvers
+Common subdirectories: linux-4.5.2/net and original/linux-4.5.2/net
+Common subdirectories: linux-4.5.2/samples and original/linux-4.5.2/samples
+Common subdirectories: linux-4.5.2/scripts and original/linux-4.5.2/scripts
+Common subdirectories: linux-4.5.2/security and original/linux-4.5.2/security
+Common subdirectories: linux-4.5.2/sound and original/linux-4.5.2/sound
+Only in linux-4.5.2: System.map
+Only in linux-4.5.2: .tmp_kallsyms1.o
+Only in linux-4.5.2: .tmp_kallsyms2.o
+Only in linux-4.5.2: .tmp_System.map
+Only in linux-4.5.2: .tmp_versions
+Only in linux-4.5.2: .tmp_vmlinux1
+Only in linux-4.5.2: .tmp_vmlinux2
+Common subdirectories: linux-4.5.2/tools and original/linux-4.5.2/tools
+Common subdirectories: linux-4.5.2/usr and original/linux-4.5.2/usr
+Only in linux-4.5.2: .version
+Common subdirectories: linux-4.5.2/virt and original/linux-4.5.2/virt
+Only in linux-4.5.2: vmlinux
+Only in linux-4.5.2: .vmlinux.cmd
+Only in linux-4.5.2: vmlinux-gdb.py
+Only in linux-4.5.2: vmlinux.o
