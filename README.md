@@ -67,4 +67,27 @@ vmx.c file
 8. Compile the linux kernel:
  * cd linux-4.5.2
  * make menuconfig
-  * This opens the GUI of Kernel Configuration
+   * This opens the GUI of Kernel Configuration
+    * Just Save -> ok -> Exit
+ * make-kpkg clean
+ * fakeroot make-kpkg --initrd --revision=1.0.NAS kernel_image kernel_headers -j 4
+   * where the number after -j is the number of cores available in VM (4 in my case)
+9. After compile is finished, following files are created outside the linux-4.5.2 directory
+ * linux-headers-4.5.2_1.0.NAS_amd64.deb
+ * linux-image-4.5.2_1.0.NAS_amd64.deb
+10. Install the newly compiled kernel:
+ * sudo dpkg -i linux-headers-4.5.0_1.0.NAS_amd64.deb
+ * sudo dpkg -i linux-image-4.5.0_1.0.NAS_amd64.deb
+11. Reboot immediately after install is finished
+ * sudo reboot
+12. Once the system is back up again, check the kernel has been updated to 4.5.2
+ * uname -mrs
+   * Linux 4.5.2 x86_64
+13. Extract svmodule.zip provided with this assignment to a directory
+14. It contains the following files:
+ * printcount.c
+ * printcount.sh
+ * Makefile
+15. Run the following commands to build our helper module:
+ * cd svmodule
+ * make
