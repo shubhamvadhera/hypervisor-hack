@@ -91,3 +91,39 @@ vmx.c file
 15. Run the following commands to build our helper module:
  * cd svmodule
  * make
+
+####Instructions to check VM Exit counts:
+1. Install Virtual Machine Manager in our host OS, Ubuntu (inside the VM only). This means, we are going to run a VM inside of our VM.
+2. Install any Linux flavor inside the VM (we used DSL since it is very light weight)
+3. Once the Guest VM is running, go back to directory svmodule
+4. Run printcount.sh
+5. Counts of all VMExits are displayed
+
+####Further improvements:
+This implementation is only recording the counter for exits for which handler modules are already written in vmx.c in kvm (45 exits). If for a particular exit, there is no handler module, this is not tracing it. So, this implementation will skip VM exits other than the ones handled by KVM.
+
+This implementation is tracing consolidated VM exits for the system. It is not tracing which VM made the exit. So, as a future work for this implementation we can implement something like per VM exit tracking and also record the time between VMExits and VMEntries to have better understanding of which VMExits take more time and find some ways to reduce the time.
+
+####References:
+Linux Kernel:
+https://www.kernel.org/
+
+Compile and install Linux kernel on Ubuntu
+http://www.cyberciti.biz/faq/debian-ubuntu-building-installing-a-custom-linux-kernel/
+
+Programming a Linux Kernel Module
+http://linux.die.net/lkmpg/hello2.html
+
+Building a modified kernel
+https://gustavus.edu/+max/courses/F2009/MCS-378/building-kernel.html
+
+Defining global variables in Linux Kernel
+http://stackoverflow.com/questions/24975069/how-to-define-linux-kernel-variable-accessed-byseveral-source-file
+
+#####Other helpful references:
+Understanding dmesg:
+http://www.linuxnix.com/what-is-linuxunix-dmesg-command-and-how-to-use-it/
+http://elinux.org/Debugging_by_printing
+
+Understanding vmx.c:
+http://lxr.free-electrons.com/source/arch/x86/kvm/vmx.c
