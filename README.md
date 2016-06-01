@@ -35,12 +35,15 @@ Host OS - Ubuntu 14.04 LTS
 Before starting the assignment, enable VTx mode on the system.
 To check VTx mode, open Task Manager
 * Click on Performance Tab, check Virtualization feature in the CPU properties.
+
 If the Virtualization is disabled, follow standard instructions to enable Virtualization from BIOS Setup for
 your system model.
 
 ####Virtual Machine system requirements:
 Minimum space required: 50GB (I used 80 GB - recommended)
+
 RAM: Minimum 4GB (I used 8 GB - recommended)
+
 Processor cores: minimum 4
 
 ####Instructions to build and install new kernel:
@@ -50,8 +53,8 @@ that virtualization is supported:
  * sudo apt-get update
  * sudo apt-get install cpu-checker
  * sudo kvm-ok
-   * INFO: /dev/kvm exists
-    * KVM acceleration can be used
+   * _INFO: /dev/kvm exists_
+    * _KVM acceleration can be used_
 3. Run following command to download Linux kernel 4.5.2
  * wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.5.2.tar.xz
 4. Extract the files to directory linux-4.5.2
@@ -82,7 +85,7 @@ vmx.c file
  * sudo reboot
 12. Once the system is back up again, check the kernel has been updated to 4.5.2
  * uname -mrs
-   * Linux 4.5.2 x86_64
+   * _Linux 4.5.2 x86_64_
 13. Extract svmodule.zip provided with this assignment to a directory
 14. It contains the following files:
  * printcount.c
