@@ -102,6 +102,14 @@ vmx.c file
 4. Run printcount.sh
 5. Counts of all VMExits are displayed
 
+####List of files:
+* diff.txt – diff file of folder comparison of original kernel with modified kernel
+* diff_vmx.txt – diff file of differences between vmx.c files in original kernel and modified kernel
+* Screenshot of dmesg output showing the print functionality working
+* svmodule.zip – to be used in installation
+* vmx.c – to be used in installation
+
+
 ####Further improvements:
 This implementation is only recording the counter for exits for which handler modules are already written in vmx.c in kvm (45 exits). If for a particular exit, there is no handler module, this is not tracing it. So, this implementation will skip VM exits other than the ones handled by KVM.
 
