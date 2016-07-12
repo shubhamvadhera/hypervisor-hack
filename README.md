@@ -6,7 +6,7 @@
 * You will need a machine capable of running the Linux KVM hypervisor.
 
 ###The Assignment
-Your assignment is to add counters to each exit type, to log the number of exits taken for each type. The counters are system-wide, across all VMs. You also will need to add a facility to instruct the hypervisor to dump the counter state to the system message log (dmesg).
+Your assignment is to add counters to each exit type, to log the number of exits taken for each type. You also will need to add a facility to instruct the hypervisor to dump the counter state to the system message log (dmesg).
 
 At a high level, you will need to perform the following:
 * Configure a Linux KVM host machine
