@@ -1,11 +1,11 @@
 # Instrumenting the KVM hypervisor
 ---
 
-##Assignment requirements
-###Prerequisites
+## Assignment requirements
+### Prerequisites
 * You will need a machine capable of running the Linux KVM hypervisor.
 
-###The Assignment
+### The Assignment
 Your assignment is to add counters to each exit type, to log the number of exits taken for each type. You also will need to add a facility to instruct the hypervisor to dump the counter state to the system message log (dmesg).
 
 At a high level, you will need to perform the following:
@@ -19,8 +19,8 @@ Next, create one (or several) VMs in KVM, and utilize the print feature you impl
 
 ---
 
-###Solution
-####Processor and Configuration of machine:
+### Solution
+#### Processor and Configuration of machine:
 Intel Core i5-5200U CPU @ 2.20 Ghz
 x64-based processor
 Windows 10 64-bit Operating System
@@ -31,7 +31,7 @@ VMWare Workstation Pro 12.1.1
 * Virtualize CPU performance counters
 Host OS - Ubuntu 14.04 LTS
 
-####Pre Requirements:
+#### Pre Requirements:
 Before starting the assignment, enable VTx mode on the system.
 To check VTx mode, open Task Manager
 * Click on Performance Tab, check Virtualization feature in the CPU properties.
@@ -39,14 +39,14 @@ To check VTx mode, open Task Manager
 If the Virtualization is disabled, follow standard instructions to enable Virtualization from BIOS Setup for
 your system model.
 
-####Virtual Machine system requirements:
+#### Virtual Machine system requirements:
 Minimum space required: 50GB (I used 80 GB - recommended)
 
 RAM: Minimum 4GB (I used 8 GB - recommended)
 
 Processor cores: minimum 4
 
-####Instructions to build and install new kernel:
+#### Instructions to build and install new kernel:
 1. Install Ubuntu 14.04 LTS in a new VM with the given hardware requirements.
 2. Once Host OS (Ubuntu) is installed, open a terminal and type following commands to ensure
 that virtualization is supported:
@@ -95,14 +95,14 @@ vmx.c file
  * cd svmodule
  * make
 
-####Instructions to check VM Exit counts:
+#### Instructions to check VM Exit counts:
 1. Install Virtual Machine Manager in our host OS, Ubuntu (inside the VM only). This means, we are going to run a VM inside of our VM.
 2. Install any Linux flavor inside the VM (we used DSL since it is very light weight)
 3. Once the Guest VM is running, go back to directory svmodule
 4. Run printcount.sh
 5. Counts of all VMExits are displayed
 
-####List of files:
+#### List of files:
 * diff.txt – diff file of folder comparison of original kernel with modified kernel
 * diff_vmx.txt – diff file of differences between vmx.c files in original kernel and modified kernel
 * Screenshot of dmesg output showing the print functionality working
@@ -110,12 +110,12 @@ vmx.c file
 * vmx.c – to be used in installation
 
 
-####Further improvements:
+#### Further improvements:
 This implementation is only recording the counter for exits for which handler modules are already written in vmx.c in kvm (45 exits). If for a particular exit, there is no handler module, this is not tracing it. So, this implementation will skip VM exits other than the ones handled by KVM.
 
 This implementation is tracing consolidated VM exits for the system. It is not tracing which VM made the exit. So, as a future work for this implementation we can implement something like per VM exit tracking and also record the time between VMExits and VMEntries to have better understanding of which VMExits take more time and find some ways to reduce the time.
 
-####References:
+#### References:
 Linux Kernel:
 https://www.kernel.org/
 
@@ -131,7 +131,7 @@ https://gustavus.edu/+max/courses/F2009/MCS-378/building-kernel.html
 Defining global variables in Linux Kernel
 http://stackoverflow.com/questions/24975069/how-to-define-linux-kernel-variable-accessed-byseveral-source-file
 
-#####Other helpful references:
+##### Other helpful references:
 Understanding dmesg:
 http://www.linuxnix.com/what-is-linuxunix-dmesg-command-and-how-to-use-it/
 http://elinux.org/Debugging_by_printing
